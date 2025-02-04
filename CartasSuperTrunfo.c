@@ -1,52 +1,44 @@
 #include <stdio.h>
 
-// Desafio Super Trunfo - Países
-// Tema 1 - Cadastro das Cartas
-// Este código inicial serve como base para o desenvolvimento do sistema de cadastro de cartas de cidades.
-// Siga os comentários para implementar cada parte do desafio.
-//Teste larissa
-
 int main() {
-
     // Definindo variáveis para armazenar os dados da cidade
-    int codigo;
-    char nome[50];
-    long populacao;
-    float area;
-    double pib;
-    int pontos_turisticos;
+    int codigo, pontos_turisticos;
+    char nome_pais[50], nome_estado[50], nome_cidade[50];  // Variáveis para armazenar o nome do país, estado e cidade
+    int populacao; // variável para armazenar a população
+    int area;     // variável para armazenar a área
+    int pib;     // variável para armazenar o PIB
 
-    // Cadastro da cidade (entrada de dados)
-    printf("Digite o código da cidade: ");
-    scanf("%d", &codigo);
+    // Solicitação e leitura dos dados do usuário
+    printf("Digite o nome do seu país: \n");
+    scanf("%s", nome_pais);  // Agora o nome do país é armazenado em 'nome_pais'
 
-    printf("Digite o nome da cidade: ");
-    getchar();  // Consumir o caractere de nova linha deixado pelo scanf anterior
-    fgets(nome, 50, stdin);
-    
-    // Remover o caractere de nova linha no final do nome
-    nome[strcspn(nome, "\n")] = '\0';
+    printf("Digite o nome de 1 estado do país: \n");
+    scanf("%s", nome_estado); // Agora o nome do estado é armazenado em 'nome_estado'
 
-    printf("Digite a população da cidade: ");
-    scanf("%ld", &populacao);
+    printf("Digite o nome de 1 cidade dentro desse estado: \n");
+    scanf("%s", nome_cidade); // Agora o nome da cidade é armazenado em 'nome_cidade'
 
-    printf("Digite a área da cidade (em km²): ");
-    scanf("%f", &area);
+    printf("Digite a população da cidade: \n");
+    scanf("%d", populacao);  // Corrigido: '%ld' para long
 
-    printf("Digite o PIB da cidade: ");
-    scanf("%lf", &pib);
+    printf("Digite a área da cidade: \n");
+    scanf("%d", area);  // Corrigido: '%f' para float
 
-    printf("Digite o número de pontos turísticos: ");
-    scanf("%d", &pontos_turisticos);
+    printf("Digite o PIB da cidade: \n");
+    scanf("%d", pib);  // Corrigido: '%lf' para double
 
-    // Exibição dos dados da cidade
-    printf("\n=== Dados da Cidade ===\n");
-    printf("Código: %d\n", codigo);
-    printf("Nome: %s\n", nome);
-    printf("População: %ld\n", populacao);
-    printf("Área: %.2f km²\n", area);
-    printf("PIB: R$ %.2lf\n", pib);
-    printf("Número de pontos turísticos: %d\n", pontos_turisticos);
+    printf("Digite o número de pontos turísticos da cidade: \n");
+    scanf("%d", pontos_turisticos);  // Corrigido: '%d' para int
+
+    // Exibindo os resultados de forma organizada
+    printf("\nSeu resultado a seguir...\n");
+    printf("Seu país: %s\n", nome_pais);  // Exibe o nome do país
+    printf("Seu estado: %s\n", nome_estado);  // Exibe o nome do estado
+    printf("Sua cidade: %s\n", nome_cidade);  // Exibe o nome da cidade
+    printf("População: %d\n", populacao);  // Exibe a população
+    printf("Área: %d km²\n", area);  // Exibe a área
+    printf("PIB: %d\n", pib);  // Exibe o PIB
+    printf("Pontos turísticos: %d\n", pontos_turisticos);  // Exibe os pontos turísticos
 
     return 0;
 }
