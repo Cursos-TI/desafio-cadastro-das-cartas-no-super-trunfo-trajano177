@@ -51,5 +51,43 @@ int main() {
     printf("PIB: %f\n", pib); 
     printf("Número de pontos turísticos: %d\n", pontos_turisticos);
 
+    printf("Digite o estado (letra de A a H): \n");
+    scanf("%s", estado); 
+    getchar();
+
+    printf("Digite o código da carta (ex: A01): \n");
+    scanf("%s", codigo); 
+    getchar();
+
+    printf("Digite o nome de uma cidade dentro desse estado: \n");
+    fgets(cidade,49, stdin);  
+    getchar();
+
+    printf("Digite a população da cidade: \n");
+    scanf("%d", &populacao);  
+    getchar();
+
+    printf("Digite a área da cidade: \n");
+    scanf("%f", &area);  
+    getchar();
+
+    printf("Digite o PIB da cidade: \n");
+    scanf("%f", &pib);  
+    getchar();
+
+    printf("Digite o número de pontos turísticos da cidade: \n");
+    scanf("%d", &pontos_turisticos); 
+    getchar();
+
+    
+    printf("\nCarta 2:\n");
+    printf("Estado: %s\n", estado);
+    printf("Carta: %s\n", codigo);
+    printf("Nome da cidade: %s\n", cidade);
+    printf("População: %d\n", populacao); 
+    printf("Área: %f km²\n", area);
+    printf("PIB: %f\n", pib); 
+    printf("Número de pontos turísticos: %d\n", pontos_turisticos);
+
     return 0;
 }
