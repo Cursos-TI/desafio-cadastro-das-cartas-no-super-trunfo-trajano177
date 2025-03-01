@@ -1,44 +1,55 @@
 #include <stdio.h>
 
 int main() {
-    // Definindo variáveis para armazenar os dados da cidade
-    int codigo, pontos_turisticos;
-    char nome_pais[50], nome_estado[50], nome_cidade[50];  // Variáveis para armazenar o nome do país, estado e cidade
-    int populacao; // variável para armazenar a população
-    int area;     // variável para armazenar a área
-    int pib;     // variável para armazenar o PIB
+   // Definindo variáveis para armazenar os dados da cidade
+   char estado[2];        // A letra do estado (ex: 'A', 'B')
+   char codigo[5];        // O código da carta (ex: "A01", "B02")
+   char cidade[50];       // Nome da cidade
+   int populacao;         // População da cidade
+   float area;            // Área da cidade em km²
+   float pib;             // PIB da cidade
+   int pontos_turisticos; // Número de pontos turísticos
 
-    // Solicitação e leitura dos dados do usuário
-    printf("Digite o nome do seu país: \n");
-    scanf("%s", nome_pais);  // Agora o nome do país é armazenado em 'nome_pais'
+    // Solicitação e leitura dos dados do usuário 
 
-    printf("Digite o nome de 1 estado do país: \n");
-    scanf("%s", nome_estado); // Agora o nome do estado é armazenado em 'nome_estado'
+    printf("Digite o estado (letra de A a H): \n");
+    scanf("%s", estado); 
+    getchar();
 
-    printf("Digite o nome de 1 cidade dentro desse estado: \n");
-    scanf("%s", nome_cidade); // Agora o nome da cidade é armazenado em 'nome_cidade'
+    printf("Digite o código da carta (ex: A01): \n");
+    scanf("%s", codigo); 
+    getchar();
+
+    printf("Digite o nome de uma cidade dentro desse estado: \n");
+    fgets(cidade,49, stdin);  
+    getchar();
 
     printf("Digite a população da cidade: \n");
-    scanf("%d", populacao);  // Corrigido: '%ld' para long
+    scanf("%d", &populacao);  
+    getchar();
 
     printf("Digite a área da cidade: \n");
-    scanf("%d", area);  // Corrigido: '%f' para float
+    scanf("%f", &area);  
+    getchar();
 
     printf("Digite o PIB da cidade: \n");
-    scanf("%d", pib);  // Corrigido: '%lf' para double
+    scanf("%f", &pib);  
+    getchar();
 
     printf("Digite o número de pontos turísticos da cidade: \n");
-    scanf("%d", pontos_turisticos);  // Corrigido: '%d' para int
+    scanf("%d", &pontos_turisticos); 
+    getchar();
 
-    // Exibindo os resultados de forma organizada
-    printf("\nSeu resultado a seguir...\n");
-    printf("Seu país: %s\n", nome_pais);  // Exibe o nome do país
-    printf("Seu estado: %s\n", nome_estado);  // Exibe o nome do estado
-    printf("Sua cidade: %s\n", nome_cidade);  // Exibe o nome da cidade
-    printf("População: %d\n", populacao);  // Exibe a população
-    printf("Área: %d km²\n", area);  // Exibe a área
-    printf("PIB: %d\n", pib);  // Exibe o PIB
-    printf("Pontos turísticos: %d\n", pontos_turisticos);  // Exibe os pontos turísticos
+    // exibir no console os dados de entrada de forma organizada
+
+    printf("\nCarta 1:\n");
+    printf("Estado: %s\n", estado);
+    printf("Carta: %s\n", codigo);
+    printf("Nome da cidade: %s\n", cidade);
+    printf("População: %d\n", populacao); 
+    printf("Área: %f km²\n", area);
+    printf("PIB: %f\n", pib); 
+    printf("Número de pontos turísticos: %d\n", pontos_turisticos);
 
     return 0;
 }
